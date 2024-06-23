@@ -1,3 +1,16 @@
+:root {
+    font-size: 62.5%;
+    font-family: 'Poppins';
+    --site-color-main: #606060;
+    --site-color-secondary: #a8a8a8;
+    --site-color-secondary-lite: #e5e5e5;
+    --site-color-text-main: #606060;
+    --site-color-text-lite: #e5e5e5;
+    --site-color-accent: #03a9f4;
+}
+
+
+
 ::after,
 ::before {
     box-sizing: border-box;
@@ -15,7 +28,7 @@ li {
 
 h1 {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 3.0rem;
 }
 
 body {
@@ -31,7 +44,7 @@ body {
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;
-    background-color: #fafbfe;
+    background-color: #e5e5e5;
 }
 
 #sidebar {
@@ -39,7 +52,7 @@ body {
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #0e2238;
+    background-color: var(--site-color-accent);
     display: flex;
     flex-direction: column;
 }
@@ -57,7 +70,7 @@ body {
 }
 
 .toggle-btn i {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     color: #FFF;
 }
 
@@ -67,7 +80,7 @@ body {
 
 .sidebar-logo a {
     color: #FFF;
-    font-size: 1.15rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -85,13 +98,13 @@ a.sidebar-link {
     padding: .625rem 1.625rem;
     color: #FFF;
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.7rem;
     white-space: nowrap;
     border-left: 3px solid transparent;
 }
 
 .sidebar-link i {
-    font-size: 1.1rem;
+    font-size: 2.0rem;
     margin-right: .75rem;
 }
 

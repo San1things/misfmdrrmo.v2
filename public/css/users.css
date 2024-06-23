@@ -1,0 +1,20 @@
+
+
+.container-xl h1 {
+    font-size: 5.0rem;
+}
+.container-xl p {
+    font-size: 2.0rem;
+}
+.container-xl a {
+    font-size: 2.0rem;
+}
+
+.card-title {
+    font-size: 8.0rem;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    color: var(--site-color-text-main);
+}
