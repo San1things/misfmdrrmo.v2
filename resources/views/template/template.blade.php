@@ -31,7 +31,7 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link">
+                    <a href="/" class="sidebar-link">
                         <i class="bi bi-person-fill"></i>
                         <span>Users</span>
                     </a>
@@ -53,7 +53,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#collapsemulti" href="#" href="#" aria-expanded="false"
+                        data-bs-target="#collapsemulti" href="#" aria-expanded="false"
                         aria-controls="collapsemulti">
                         <i class="bi bi-person-fill"></i>
                         <span>Collapse Multi Test</span>
@@ -61,7 +61,7 @@
                     <ul class="sidebar-dropdown list-unstyled collapse" id="collapsemulti" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#multilink" href="#" href="#" aria-expanded="false"
+                                data-bs-target="#multilink" href="#" aria-expanded="false"
                                 aria-controls="multilink">
                                 Two Links
                             </a>
@@ -77,20 +77,20 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link">
+                    <a href="#" class="sidebar-link">
                         <i class="bi bi-person-fill"></i>
                         <span>Test</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link">
+                    <a href="#" class="sidebar-link">
                         <i class="bi bi-person-fill"></i>
                         <span>Test</span>
                     </a>
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a class="sidebar-link" href="#">
+                <a href="#" class="sidebar-link" href="#">
                     <i class="bi bi-box-arrow-left"></i>
                     <span>Log Out</span>
                 </a>

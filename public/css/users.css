@@ -2,9 +2,11 @@
 
 .container-xl h1 {
     font-size: 5.0rem;
+    line-height: 1.5;
 }
 .container-xl p {
     font-size: 2.0rem;
+    line-height: 1.5;
 }
 .container-xl a {
     font-size: 2.0rem;

@@ -1,6 +1,6 @@
 @extends('template.template')
 @section('content')
-    <div class="container-xl">
+    <div class="container-xl mt-4">
         <div class="users-header d-flex align-items-center mb-3">
             <div class="header-title p-2 flex-grow-1">
                 <h1>Users</h1>
@@ -72,7 +72,103 @@
                     </div>
                 </div>
             </nav>
-            
+            <div class="table-responsive-lg">
+                <table class="table table table-light table-hover mt-5 align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col-1">#</th>
+                            <th scope="col-1">First</th>
+                            <th scope="col-1">Last</th>
+                            <th scope="col-1">Handle</th>
+                            <th scope="col-1"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Thornton</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Thornton</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Thornton</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Thornton</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Thornton</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Thornton</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @endsection
