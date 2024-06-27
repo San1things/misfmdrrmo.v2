@@ -9,7 +9,7 @@
             <div class="header-export pe-3">
                 <a href="#">
                     <i class="bi bi-file-earmark-arrow-down-fill"></i>
-                    <span>Export</span>
+                    <span>Add</span>
                 </a>
             </div>
         </div>
@@ -18,7 +18,9 @@
                 <div class="col">
                     <div class="card text-bg-light mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">000</h5>
+                            @isset($adminCount)
+                                <h5 class="card-title">{{ $adminCount }}</h5>
+                            @endisset
                             <p class="card-text">Admins.</p>
                         </div>
                     </div>
@@ -26,7 +28,7 @@
                 <div class="col">
                     <div class="card text-bg-light mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">000</h5>
+                            <h5 class="card-title">{{ $staffCount }}</h5>
                             <p class="card-text">Staffs.</p>
                         </div>
                     </div>
@@ -42,7 +44,7 @@
             </div>
         </div>
         <div class="users-table">
-            <h1>All users(000)</h1>
+            <h1>All users({{ $allCount }})</h1>
             <nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
                 <div class="container-xl">
                     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -76,96 +78,39 @@
                 <table class="table table table-light table-hover mt-5 align-middle">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col-1">#</th>
-                            <th scope="col-1">First</th>
-                            <th scope="col-1">Last</th>
-                            <th scope="col-1">Handle</th>
+                            <th scope="col-1">First Name</th>
+                            <th scope="col-1">Last Name</th>
+                            <th scope="col-1">Email</th>
+                            <th scope="col-1">Usertype</th>
+                            <th scope="col-1">Username</th>
+                            <th scope="col-1">Password</th>
+                            <th scope="col-1">Gender</th>
+                            <th scope="col-1">Birthday</th>
+                            <th scope="col-1">Contact #</th>
+                            <th scope="col-1">Team</th>
                             <th scope="col-1"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Thornton</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Thornton</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Thornton</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Thornton</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Thornton</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Thornton</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                            </td>
-                        </tr>
+                        @foreach ($tbl_users as $users)
+                            <tr>
+                                <td>{{ $users->firstname }}</td>
+                                <td>{{ $users->lastname }}</td>
+                                <td>{{ $users->email }}</td>
+                                <td>{{ $users->usertype }}</td>
+                                <td>{{ $users->username }}</td>
+                                <td>{{ $users->password }}</td>
+                                <td>{{ $users->gender }}</td>
+                                <td>{{ $users->bday }}</td>
+                                <td>{{ $users->contact }}</td>
+                                <td>{{ $users->team }}</td>
+                                <td>
+                                    <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
