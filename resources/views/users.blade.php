@@ -18,9 +18,7 @@
                 <div class="col">
                     <div class="card text-bg-light mb-3">
                         <div class="card-body">
-                            @isset($adminCount)
-                                <h5 class="card-title">{{ $adminCount }}</h5>
-                            @endisset
+                            <h5 class="card-title">{{ $adminCount }}</h5>
                             <p class="card-text">Admins.</p>
                         </div>
                     </div>
@@ -36,7 +34,7 @@
                 <div class="col">
                     <div class="card text-bg-light mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">000</h5>
+                            <h5 class="card-title">{{ $residentCount }}</h5>
                             <p class="card-text">Others.</p>
                         </div>
                     </div>
@@ -68,13 +66,13 @@
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" aria-label="Search" placeholder="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <input class="form-control me-3 fs-4" type="search" aria-label="Search" placeholder="Search">
+                            <button class="btn btn-outline-success fs-4" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
             </nav>
-            <div class="table-responsive-lg">
+            <div class="table-responsive-lg fs-4">
                 <table class="table table table-light table-hover mt-5 align-middle">
                     <thead class="table-dark">
                         <tr>
@@ -105,8 +103,15 @@
                                 <td>{{ $users->contact }}</td>
                                 <td>{{ $users->team }}</td>
                                 <td>
-                                    <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                                    <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                    <a class="btn btn-primary update-btn" data-id="{{ $users->id }}"
+                                        data-firstname="{{ $users->firstname }}" data-bs-toggle="modal"
+                                        data-bs-target="#userUpdateModal" data-lastname="{{ $users->lastname }}"
+                                        data-email="{{ $users->email }}" data-usertype="{{ $users->usertype }}"
+                                        data-username="{{ $users->username }}" data-password="{{ $users->password }}"
+                                        data-gender="{{ $users->gender }}" data-birthday="{{ $users->bday }}"
+                                        data-contact="{{ $users->contact }}" data-team="{{ $users->team }}"
+                                        href="#"><i class="bi bi-pencil-square"></i></a>
+                                    <a class="btn btn-danger delete-btn"><i class="bi bi-trash3-fill"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -116,4 +121,85 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="userUpdateModal" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalTitle">Update User</h1>
+                    <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+                </div>
+                <form id="modalForm" action="/addtodo" method="post">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="firstname" name="firstname" type="text">
+                            <label for="floatingInput">First Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="lastname" name="lastname"></input>
+                            <label for="floatingInput">Last Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="email" name="email"></input>
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="usertype" name="usertype"></input>
+                            <label for="floatingInput">Usertype</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="username" name="username"></input>
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="password" name="password"></input>
+                            <label for="floatingInput">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="gender" name="gender"></input>
+                            <label for="floatingInput">Gender</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="birthday" name="birthday"></input>
+                            <label for="floatingInput">Birthday</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="contact" name="contact"></input>
+                            <label for="floatingInput">Contact</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control fs-4" id="team" name="team"></input>
+                            <label for="floatingInput">Team</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary fs-3" type="submit">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.update-btn').on('click', function() {
+                let id = $(this).data('id');
+                $('#firstname').val($(this).data('firstname'))
+                $('#lastname').val($(this).data('lastname'))
+                $('#email').val($(this).data('email'))
+                $('#usertype').val($(this).data('usertype'))
+                $('#username').val($(this).data('username'))
+                $('#password').val($(this).data('password'))
+                $('#gender').val($(this).data('gender'))
+                $('#birthday').val($(this).data('birthday'))
+                $('#contact').val($(this).data('contact'))
+                $('#team').val($(this).data('team'))
+                $('#modalTitle').text('UPDATE')
+                $('#modalForm').attr('action', '/updateuser?id=' + id)
+            })
+        })
+    </script>
+@endpush
