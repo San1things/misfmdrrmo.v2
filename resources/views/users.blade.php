@@ -53,20 +53,21 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item border">
-                                <a class="nav-link active" href="#" aria-current="page">View All</a>
+                                <a class="nav-link active" href="/" aria-current="page">View All</a>
                             </li>
                             <li class="nav-item border border-start-0">
-                                <a class="nav-link" href="#">Admins</a>
+                                <a class="nav-link" href="?usertype=admin">Admins</a>
                             </li>
                             <li class="nav-item border border-start-0">
-                                <a class="nav-link" href="#">Staffs</a>
+                                <a class="nav-link" href="?usertype=staff">Staffs</a>
                             </li>
                             <li class="nav-item border border-start-0">
-                                <a class="nav-link" href="#">Others</a>
+                                <a class="nav-link" href="?usertype=other">Others</a>
                             </li>
                         </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-3 fs-4" type="search" aria-label="Search" placeholder="Search">
+                        <form class="d-flex" role="search" method="get">
+                            <input class="form-control me-3 fs-4" name="searchUser" type="search" aria-label="Search"
+                                placeholder="Search">
                             <button class="btn btn-outline-success fs-4" type="submit">Search</button>
                         </form>
                     </div>
