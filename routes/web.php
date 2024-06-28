@@ -9,4 +9,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UsersController::class, 'index'])->name('homepage');
 
-Route::post('/updateuser', [UsersController::class, 'userUpdate'])->name('userupdate');
+Route::post('/updateuser', [UsersController::class, 'userUpdate'])->name('updateuser');
+
+Route::get('/filteradmin', [UsersController::class, 'userFilterAdmin'])->name('filteradmin');

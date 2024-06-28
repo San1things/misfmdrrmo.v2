@@ -28,6 +28,7 @@ class UsersController extends Controller
         ]);
 
     }
+    
 
     public function userUpdate(Request $request){
         $input = $request->input();
